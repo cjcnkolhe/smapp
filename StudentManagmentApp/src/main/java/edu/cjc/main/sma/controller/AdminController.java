@@ -1,5 +1,7 @@
 package edu.cjc.main.sma.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner.Mode;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,8 @@ public class AdminController {
 	public String onLogin(@RequestParam String username,@RequestParam String password,Model m) {
 		
 		if(username.equals("ADMIN") && password.equals("ADMIN")) {
+			          List<Student> list =ssi.getAllStudents();
+			          m.addAttribute("data", list);
 			return "adminscreen";
 		}
 		else 
@@ -32,6 +36,7 @@ public class AdminController {
 		{
 			Student s=ssi.loginStudent(username, password);
 			 if(s!=null) {
+				 m.addAttribute("stu", s);
 				 return "studentview";
 			 }
 			 else {
