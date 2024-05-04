@@ -53,8 +53,24 @@ public class AdminController {
 		return "adminscreen";
 	}
 	
+	@RequestMapping("/search")
+public String getBatchStudent(@RequestParam String batchNumber,Model m) {
 	
-	
+		List<Student> result=ssi.searchStudentByBatch(batchNumber);
+		
+		  if(result.size()>0) {
+			  m.addAttribute("data", result);
+			 
+		  }
+		  else {
+			  List<Student> list=ssi.getAllStudents();
+			  m.addAttribute("data", list);
+			m.addAttribute("message", "No Record are available for Batch    "+batchNumber+"    ");	
+
+		  }
+		
+		  return "adminscreen";
+		}
 	
 	
 }

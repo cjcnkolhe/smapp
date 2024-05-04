@@ -171,8 +171,27 @@ form {
 		<section class="view" style="height: 530px" id="view">
 			<h1>View Student</h1>
 
-			<h1 class="text-center">Student Details..!</h1>
-			<table class="table table-hover" style="font-size: small">
+			
+			<h1 class="text-center ">Student Details..!</h1>
+			<div class="text-center w-100">
+				<form action="search" class="w-100">
+					<select class="select form-control-sm border border-primary"
+						name="batchNumber">
+						<option value="#" slected>Select Batch Number</option>
+						
+						<option value="FDJ-164">FDJ-164</option>
+						<option value="REG-164">REG-164</option>
+						<option value="FDJ-165">FDJ-165</option>
+						<option value="REG-165">REG-165</option>
+					</select>
+					<button class="btn btn-outline-primary mb-1">Search</button>
+				</form>
+				<marquee>
+					<h1 style="color: red;">${message }</h1>
+				</marquee>
+			</div>
+			
+				<table class="table table-hover" style="font-size: small">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -213,6 +232,19 @@ form {
 					</c:forEach>
 				</tbody>
 			</table>
+				<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
 		</section>
 	</div>
 </body>

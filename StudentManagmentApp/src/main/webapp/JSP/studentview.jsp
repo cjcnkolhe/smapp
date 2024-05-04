@@ -14,7 +14,7 @@
 	<nav class="d-flex justify-content-between p-2 border border-primary">
 		<img src="images/cjclogo.jpg" width="100px" height="50px">
 		<div class="pt-2">
-			
+			<a href="/">
 				<button class="btn btn-outline-primary">Logout</button>
 			</a>
 		</div>
@@ -64,6 +64,7 @@
 					
 				</tbody>
 			</table>
+			
 	
 
 </body>

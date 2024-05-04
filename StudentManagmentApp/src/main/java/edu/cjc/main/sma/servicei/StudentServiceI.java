@@ -9,5 +9,6 @@ public interface StudentServiceI {
 	void saveStudentDetails(Student s);
 	public Student loginStudent(String username,String password);
 	public List<Student> getAllStudents();
+	public List<Student> searchStudentByBatch(String batchNumber);
 
 }
