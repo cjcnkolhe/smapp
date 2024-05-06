@@ -10,5 +10,8 @@ public interface StudentServiceI {
 	public Student loginStudent(String username,String password);
 	public List<Student> getAllStudents();
 	public List<Student> searchStudentByBatch(String batchNumber);
+	Student getStudentData(int studentId);
+	void updateStudentFess(int studentid, double ammount);
+	void updateStudentBatch(int studentid, String batchNumber);
 
 }

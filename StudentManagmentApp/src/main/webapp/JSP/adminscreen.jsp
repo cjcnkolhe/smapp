@@ -35,7 +35,17 @@ form {
 	background-repeat: no-repeat;
 }
 </style>
+<script type="text/javascript">
+  function fees() {
+	document.fn.action="/fees";
+	document.fn.submit();
+}
+  function batch() {
+		document.fn.action="/batch";
+		document.fn.submit();
+	}
 
+</script>
 </head>
 <body>
 	<div class="card">
@@ -190,7 +200,7 @@ form {
 					<h1 style="color: red;">${message }</h1>
 				</marquee>
 			</div>
-			
+			<form name="fn">
 				<table class="table table-hover" style="font-size: small">
 				<thead>
 					<tr>
@@ -202,7 +212,8 @@ form {
 						<th>Course Name</th>
 						<th>Bath No</th>
 						<th>Mode</th>
-						<th>Fess Recived</th>
+						<th>Fess Recived</th>	
+						<th>SELECT</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -218,13 +229,14 @@ form {
 							<td>${s.batchNumber}</td>
 							<td>${s.batchMode}</td>
 							<td>${s.feesPaid}</td>
+							<td><input type="radio" name="studentId" value="${s.studentId}"></td>
 							<td>
 								<div class="btn-group btn-group-sm" role="group"
 									aria-label="...">
-									<button class="btn btn-outline-success">Pay-Fees</button>
+									<button class="btn btn-outline-success" onclick="fees()">Pay-Fees</button>
 
 
-									<button class="btn btn-outline-primary">Shift-Batch</button>
+									<button class="btn btn-outline-primary" onclick="batch()">Shift-Batch</button>
 									<button class="btn btn-outline-danger">Remove</button>
 								</div>
 							</td>
@@ -232,6 +244,7 @@ form {
 					</c:forEach>
 				</tbody>
 			</table>
+			</form>
 				<nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end">
     <li class="page-item disabled">

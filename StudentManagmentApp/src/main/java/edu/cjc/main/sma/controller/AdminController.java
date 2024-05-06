@@ -72,5 +72,43 @@ public String getBatchStudent(@RequestParam String batchNumber,Model m) {
 		  return "adminscreen";
 		}
 	
+	@RequestMapping("/fees")
+	public String onFees(@RequestParam int studentId,Model m) {
+		
+		Student s=ssi.getStudentData(studentId);
+		m.addAttribute("st", s);
+		return "fess";
+	}
+	
+
+	@RequestMapping("/payfees")
+	public String payFees(@RequestParam int studentid,@RequestParam double ammount,Model m ) {
+		
+		    ssi.updateStudentFess(studentid,ammount);
+		List<Student> students=ssi.getAllStudents();
+		m.addAttribute("data", students);
+		return "adminscreen";
+	}
+	
+	
+	@RequestMapping("/batch")
+	public String onBatch(@RequestParam int studentId,Model m) {
+		
+		Student s=ssi.getStudentData(studentId);
+		m.addAttribute("st", s);
+		return "batch";
+	}
+	
+	@RequestMapping("/updateBatch")
+	public String shiftBatch(@RequestParam int studentid,@RequestParam String batchNumber,Model m ) {
+		
+		    ssi.updateStudentBatch(studentid,batchNumber);
+		List<Student> students=ssi.getAllStudents();
+		m.addAttribute("data", students);
+		return "adminscreen";
+	}
+	
+	
+	
 	
 }
