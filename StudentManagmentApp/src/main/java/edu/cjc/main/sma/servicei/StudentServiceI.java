@@ -2,6 +2,7 @@ package edu.cjc.main.sma.servicei;
 
 import java.util.List;
 
+import edu.cjc.main.sma.model.EquiryFrom;
 import edu.cjc.main.sma.model.Student;
 
 public interface StudentServiceI {
@@ -13,5 +14,7 @@ public interface StudentServiceI {
 	Student getStudentData(int studentId);
 	void updateStudentFess(int studentid, double ammount);
 	void updateStudentBatch(int studentid, String batchNumber);
+	void saveEquiryForm(EquiryFrom e);
+	List<EquiryFrom> getALLEQ();
 
 }

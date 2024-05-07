@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.cjc.main.sma.model.EquiryFrom;
 import edu.cjc.main.sma.model.Student;
 import edu.cjc.main.sma.servicei.StudentServiceI;
 
@@ -28,7 +29,9 @@ public class AdminController {
 		
 		if(username.equals("ADMIN") && password.equals("ADMIN")) {
 			          List<Student> list =ssi.getAllStudents();
+			          List<EquiryFrom> elist=ssi.getALLEQ();
 			          m.addAttribute("data", list);
+			          m.addAttribute("alleqdata", elist);
 			return "adminscreen";
 		}
 		else 
@@ -107,7 +110,6 @@ public String getBatchStudent(@RequestParam String batchNumber,Model m) {
 		m.addAttribute("data", students);
 		return "adminscreen";
 	}
-	
 	
 	
 	

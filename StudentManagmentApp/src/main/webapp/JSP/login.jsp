@@ -12,6 +12,16 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<div class="card">
+  <nav class="d-flex justify-content-between p-2 border border-primary">
+			<img src="images/cjclogo.jpg" width="100px" height="50px">
+			<div class="pt-2">
+				<a href="equiry">
+					<button class="btn btn-outline-primary">Equiry</button>
+				</a>
+			</div>
+		</nav>
+</div>
 	<marquee class="bg-primary">
 		<h2 class="text-white">${login_fail}</h2>
 	</marquee>

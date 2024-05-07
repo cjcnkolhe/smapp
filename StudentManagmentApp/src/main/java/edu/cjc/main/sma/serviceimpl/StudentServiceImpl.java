@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.cjc.main.sma.model.EquiryFrom;
 import edu.cjc.main.sma.model.Student;
+import edu.cjc.main.sma.repositary.EnquiryRepositary;
 import edu.cjc.main.sma.repositary.StudentRepositary;
 import edu.cjc.main.sma.servicei.StudentServiceI;
 @Service
@@ -14,6 +16,8 @@ public class StudentServiceImpl implements StudentServiceI
  {
 @Autowired
 	StudentRepositary sr;
+@Autowired
+EnquiryRepositary er;
 	
 	@Override
 	public void saveStudentDetails(Student s) {
@@ -62,6 +66,18 @@ public class StudentServiceImpl implements StudentServiceI
 		Student s=op.get();
 		s.setBatchNumber(batchNumber);
 		sr.save(s);
+	}
+
+	@Override
+	public void saveEquiryForm(EquiryFrom e) {
+
+		er.save(e);
+	}
+
+	@Override
+	public List<EquiryFrom> getALLEQ() {
+		// TODO Auto-generated method stub
+		return er.findAll();
 	}
 
 	

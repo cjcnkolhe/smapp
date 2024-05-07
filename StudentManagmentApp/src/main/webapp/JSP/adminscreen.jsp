@@ -56,7 +56,11 @@ form {
 					<button class="btn btn-outline-primary">Enroll Student</button>
 				</a> <a href="#view">
 					<button class="btn btn-outline-primary">View Student</button>
-				</a> <a href="/">
+				</a> 
+				 <a href="#viewequiry">
+					<button class="btn btn-outline-primary">View Enquiry Details</button>
+				</a> 
+				<a href="/">
 					<button class="btn btn-outline-primary">Logout</button>
 				</a>
 			</div>
@@ -245,20 +249,40 @@ form {
 				</tbody>
 			</table>
 			</form>
-				<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-end">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+				
 		</section>
+		
+		
+			<section class="view" style="height: 530px" id="viewequiry">
+			<h1>ViewALLEquiry</h1>
+
+			
+			
+				<table class="table table-hover" style="font-size: small">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Contact</th>
+						<th>Message</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${alleqdata}" var="e">
+						<tr>
+							<td>${e.eid}</td>
+							<td>${e.name}</td>
+							<td>${e.email}</td>
+							<td>${e.phone}</td>
+							<td>${e.message}</td>
+							
+					</c:forEach>
+				</tbody>
+			</table>
+			
+			</section>
 	</div>
 </body>
 </html>
